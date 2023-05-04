@@ -1,0 +1,19 @@
+<div class="content__header-box">
+  <p>Envie seu E-mail!</p>
+</div>
+<div class="content__input-box">
+  <div class="content__input">
+    <input type="text" placeholder="Assunto" id="titleValue" name="titleValue" [(ngModel)]="titleValue">
+  </div>
+  <div class="content__input">
+    <input type="email" placeholder="E-mail" id="emailInput" name="emailToSend" [(ngModel)]="emailToSendValue">
+  </div>
+  <div class="content__input">
+    <textarea placeholder="Mensagem" class="text-area" rows="5" id="messageValue" name="messageValue"
+      [(ngModel)]="messageValue">
+      </textarea>
+  </div>
+</div>
+<div class="content__button-box">
+  <button class="send-button" (click)="sendData()">Enviar</button>
+</div>

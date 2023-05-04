@@ -1,37 +1,17 @@
 <div class="background">
   <div class="content">
-    <div class="verify" *ngIf="loading">
-      LOADING
+    <div class="content__verify" *ngIf="loading">
+      <app-loading></app-loading>
     </div>
-    <div class="verify" *ngIf="!loading">
+    <div class="content__verify" *ngIf="!loading">
       <div class="verify__child" *ngIf="hasSended">
-        <div class="sended__box">
-          <p>{{ requestMessage.text }}</p>
-          <div class="sended__button-box">
-            <button>{{ requestMessage.buttonValue }}</button>
-          </div>
-        </div>
+        <app-error-message (tryAgain)="changeTemplate()" ></app-error-message>
       </div>
       <div class="verify__child" *ngIf="!hasSended">
-        <div class="content__header-box">
-          <p>Envie seu E-mail!</p>
-        </div>
-        <div class="content__input-box">
-          <div class="content__input">
-            <input type="text" placeholder="Assunto" id="titleValue" name="titleValue" [(ngModel)]="titleValue">
-          </div>
-          <div class="content__input">
-            <input type="email" placeholder="E-mail" id="emailInput" name="emailToSend" [(ngModel)]="emailToSendValue">
-          </div>
-          <div class="content__input">
-            <textarea placeholder="Mensagem" class="text-area" rows="5"  type="text" id="messageValue" name="messageValue" [(ngModel)]="messageValue">
-            </textarea>
-          </div>
-        </div>
-        <div class="content__button-box">
-          <button class="send-button" (click)="sendEmail()">Enviar</button>
-        </div>
+        <app-send-email></app-send-email>
       </div>
     </div>
   </div>
 </div>
+
+<!-- FAZER VALIDAÇÃO DOS CAMPOS ANTES DE ENVIAR -->
