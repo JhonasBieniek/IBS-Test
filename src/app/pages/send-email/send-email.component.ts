@@ -28,14 +28,30 @@ export class SendEmailComponent implements OnInit {
       title: this.titleValue,
       text: this.messageValue,
     };
-    this.helperService.sendEmail(data).then((value) => {
-      this.helperService.setLoading(false);
-      this.clearToSendAgain();
-    }, (error) => {
-      this.helperService.setLoading(false);
-      this.helperService.setSend(true)
-      this.clearToSendAgain();
-    })
+    if(this.verifyInputs()){
+      this.helperService.sendEmail(data).then((value) => {
+        this.helperService.setLoading(false);
+        this.clearToSendAgain();
+      }, (error) => {
+        this.showProblem();
+      })
+    } else {
+      this.showProblem();
+    }
+  }
+
+  showProblem(){
+    this.helperService.setLoading(false);
+    this.helperService.setSend(true)
+    this.clearToSendAgain();
+  }
+
+  verifyInputs(){
+    if(this.emailToSendValue.includes("@") && this.titleValue.length > 0 && this.messageValue.length > 0){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   clearToSendAgain() {

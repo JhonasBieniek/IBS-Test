@@ -1,12 +1,42 @@
 .sended {
 	&__box {
+		height: 33em;
 		width: 100%;
-		p {
-			text-align: center;
-			font-size: 1.2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	&__box-title {
+		text-align: center;
+		font-size: 2em;
+		font-family: "Nunito", sans-serif;
+		text-transform: uppercase;
+		color: #006187;
+	}
+	&__box-text{
+		max-width: 80%;
+		margin: 1em auto;
+		text-align: start;
+		font-size: 1.5em;
+		font-family: "Nunito", sans-serif;
+		color: #1b375c;
+	}
+
+	&__box-list{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+		max-width: 80%;
+		padding: 0;
+		margin: 0 auto;
+		list-style: none;
+		li{
+			text-align: start;
+			font-size: 1em;
 			font-family: "Nunito", sans-serif;
-			text-transform: uppercase;
-			color: #006187;
+			color: #1b375c;
 		}
 	}
 	&__button-box {

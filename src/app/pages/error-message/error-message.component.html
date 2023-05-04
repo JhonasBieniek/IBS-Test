@@ -1,5 +1,12 @@
 <div class="sended__box">
-  <p>Erro ao enviar o E-mail.</p>
+  <div>
+    <h3 class="sended__box-title">Erro ao enviar o E-mail!</h3>
+    <p class="sended__box-text">Verifique os seguintes pontos:</p>
+    <ul class="sended__box-list">
+      <li>- Você passou os dados corretamente?</li>
+      <li>- O servidor esta ligado? Se não, vá ao github e veja como ligar.</li>
+    </ul>
+  </div>
   <div class="sended__button-box">
     <button (click)="tryAgainEvent()">Tentar Novamente</button>
   </div>
