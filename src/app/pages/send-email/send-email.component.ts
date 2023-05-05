@@ -29,10 +29,10 @@ export class SendEmailComponent implements OnInit {
       text: this.messageValue,
     };
     if(this.verifyInputs()){
-      this.helperService.sendEmail(data).then((value) => {
+      this.helperService.sendEmail(data).then(() => {
         this.helperService.setLoading(false);
         this.clearToSendAgain();
-      }, (error) => {
+      }, () => {
         this.showProblem();
       })
     } else {
@@ -47,6 +47,7 @@ export class SendEmailComponent implements OnInit {
   }
 
   verifyInputs(){
+    //verifica se os inputs possuem os dados necessarios
     if(this.emailToSendValue.includes("@") && this.titleValue.length > 0 && this.messageValue.length > 0){
       return true;
     } else {
