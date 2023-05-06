@@ -44,4 +44,18 @@ export class HelperService {
       }, 300)
     })
   }
+
+  createUser(data: Object){
+    return new Promise((resolve, reject) => {
+      const url = 'http://localhost:3000/auth/register';
+      // setTimeout apenas para exibir melhor o loading
+      setTimeout(() => {
+        this.http.post(url, data).subscribe(() => {
+          resolve(true)
+        }, (error) => {
+          reject(false)
+        });
+      }, 300)
+    })
+  }
 }

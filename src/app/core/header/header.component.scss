@@ -1,0 +1,21 @@
+.header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        gap: 2em;
+    }
+
+    &__button {
+        font-weight: 500;
+        font-size: 2em;
+    }
+
+    &__button:hover {
+        cursor: pointer;
+        color: #1b375c;
+        border-bottom: 1px solid #1b375c;
+    }
+}

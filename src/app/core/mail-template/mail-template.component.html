@@ -1,0 +1,13 @@
+<div class="content">
+    <div class="content__verify" *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+    <div class="content__verify" *ngIf="!loading">
+        <div class="verify__child" *ngIf="hasSended">
+            <app-error-message (tryAgain)="changeTemplate()"></app-error-message>
+        </div>
+        <div class="verify__child" *ngIf="!hasSended">
+            <app-send-email></app-send-email>
+        </div>
+    </div>
+</div>
