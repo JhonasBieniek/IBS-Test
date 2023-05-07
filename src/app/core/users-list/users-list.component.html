@@ -1,13 +1,24 @@
 <div class="content">
-    <div class="content__verify">
-        <div *ngFor="let user of usersList[0]">
-            <div *ngIf="user.name > ''">
-                <span> {{ user.name }} </span>
-                <span>{{user.profission}}</span>
-                <span>{{user.pet}}</span>
-                <button routerLink="/more/{{user.id}}">READ MORE</button>
+    <div class="content__users-component">
+        <div class="content__users-container">
+            <div *ngFor="let user of usersList[0]" class="content__users-content">
+                <div *ngIf="user.name > ''" class="">
+                    <div class="text">
+                        <label>Nome:</label>
+                        <span> {{ user.name }} </span>
+                    </div>
+                    <div class="text">
+                        <label>Profissão:</label>
+                        <span> {{ user.profission }} </span>
+                    </div>
+                    <div class="content__users-button-read">
+                        <button routerLink="/more/{{user.id}}" class="send-button">READ MORE</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <button routerLink="/create">+</button>
+        <div class="content__users-button-container">
+            <button routerLink="/create" class="content__users-button">+</button>
+        </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ import { UsersDeleteComponent } from './core/users-delete/users-delete.component
 
 const routes: Routes = [
   { path: 'sendMail', component: MailTemplateComponent },
-  { path: 'users', component: UsersListComponent },
+  { path: '', component: UsersListComponent },
   { path: 'create', component: UsersCreateComponent},
   { path: 'more/:id', component: UserDetailsComponent},
   { path: 'edit/:id', component: UsersEditComponent},

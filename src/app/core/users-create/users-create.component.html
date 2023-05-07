@@ -1,6 +1,17 @@
-<div>
-    <input type="text" placeholder="nome" id="name" name="name" [(ngModel)]="name">
-    <input type="text" placeholder="profissao" id="profission" name="profission" [(ngModel)]="profission">
-    <input type="text" placeholder="pet" id="pet" name="pet" [(ngModel)]="pet">
-    <button (click)="registerUser()">cadastrar</button>
+<div class="content">
+    <div class="back-button">
+        <button routerLink="/" class="send-button"><</button>
+    </div>
+    <div class="content__users-component">
+        <div class="content__users-container">
+            <div class="content__users-content">
+                <input type="text" placeholder="Nome" id="name" name="name" [(ngModel)]="name">
+                <input type="text" placeholder="Profissao" id="profission" name="profission" [(ngModel)]="profission">
+                <input type="text" placeholder="Pet" id="pet" name="pet" [(ngModel)]="pet">
+            </div>
+        </div>
+        <div class="content__users-button-container">
+            <button (click)="registerUser()" class="send-button">cadastrar</button>
+        </div>
+    </div>
 </div>
