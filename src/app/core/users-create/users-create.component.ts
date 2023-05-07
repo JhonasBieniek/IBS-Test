@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HelperService } from 'src/app/shared/helper.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-users-create',
@@ -19,6 +20,7 @@ export class UsersCreateComponent {
       name: this.name,
       profission: this.profission,
       pet: this.pet,
+      id: uuidv4(),
     }
     this.helperService.createUser(data).then(() => {
       this.clearToSendAgain();
@@ -26,7 +28,6 @@ export class UsersCreateComponent {
   }
 
   clearToSendAgain() {
-    //limpando variaveis principais
     this.name = "";
     this.profission = "";
     this.pet = "";

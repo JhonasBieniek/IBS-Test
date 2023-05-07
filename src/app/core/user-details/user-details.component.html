@@ -1,13 +1,13 @@
 <div class="content">
     <div class="content__verify">
-        <div *ngFor="let user of usersList[0]">
+        <div *ngFor="let user of oneUser[0]">
             <div *ngIf="user.name > ''">
                 <span> {{ user.name }} </span>
                 <span>{{user.profission}}</span>
                 <span>{{user.pet}}</span>
-                <button routerLink="/more/{{user.id}}">READ MORE</button>
+                <button routerLink="/edit/{{user.id}}">editar</button>
+                <button routerLink="/delete/{{user.id}}">deletar</button>
             </div>
         </div>
-        <button routerLink="/create">+</button>
     </div>
 </div>

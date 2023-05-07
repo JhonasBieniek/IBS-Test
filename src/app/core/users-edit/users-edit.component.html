@@ -1,1 +1,10 @@
-<p>users-edit works!</p>
+<div class="content">
+    <div class="content__verify">
+        <div>
+            <input type="text" placeholder="nome" id="name" name="name" [(ngModel)]="name">
+            <input type="text" placeholder="profissao" id="profission" name="profission" [(ngModel)]="profission">
+            <input type="text" placeholder="pet" id="pet" name="pet" [(ngModel)]="pet">
+            <button (click)="editValues()">editar</button>
+        </div>
+    </div>
+</div>

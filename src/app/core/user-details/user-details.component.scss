@@ -1,0 +1,30 @@
+.content {
+    background-color: #fff;
+    border-radius: 25px;
+    height: 33em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // max-width: 30em;
+    min-width: 2em;
+    margin: 2em;
+    width: 80em;
+
+    @media(max-width: 320px) {
+        height: 37em;
+        width: 31em;
+        margin: 1.5em;
+    }
+
+    @media(max-width: 200px) {
+        height: 41em;
+        width: 31em;
+        margin: 1em;
+    }
+
+    &__verify,
+    .verify__child {
+        width: 100%;
+    }
+}

@@ -12,6 +12,8 @@ import { UsersListComponent } from './core/users-list/users-list.component';
 import { MailTemplateComponent } from './core/mail-template/mail-template.component';
 import { UsersCreateComponent } from './core/users-create/users-create.component';
 import { UsersEditComponent } from './core/users-edit/users-edit.component';
+import { UserDetailsComponent } from './core/user-details/user-details.component';
+import { UsersDeleteComponent } from './core/users-delete/users-delete.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { UsersEditComponent } from './core/users-edit/users-edit.component';
     UsersListComponent,
     MailTemplateComponent,
     UsersCreateComponent,
-    UsersEditComponent
+    UsersEditComponent,
+    UserDetailsComponent,
+    UsersDeleteComponent
   ],
   imports: [
     FormsModule,
