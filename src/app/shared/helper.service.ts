@@ -49,13 +49,23 @@ export class HelperService {
     return new Promise((resolve, reject) => {
       const url = 'http://localhost:3000/auth/register';
       // setTimeout apenas para exibir melhor o loading
-      setTimeout(() => {
         this.http.post(url, data).subscribe(() => {
           resolve(true)
         }, (error) => {
           reject(false)
         });
-      }, 300)
+    })
+  }
+
+  getAllData(){
+    return new Promise((resolve, reject) => {
+      const url = 'http://localhost:3000/auth/';
+      this.http.get(url).subscribe((response) => {
+        console.log(response)
+        resolve(true)
+      }, (error) => {
+        reject(false)
+      })
     })
   }
 }

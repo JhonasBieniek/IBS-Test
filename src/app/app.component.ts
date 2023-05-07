@@ -21,6 +21,7 @@ export class AppComponent {
     this.helperService.isSending().subscribe(value => {
       this.hasSended = value;
     });
+    this.helperService.getAllData();
   }
 
   changeTemplate(){
