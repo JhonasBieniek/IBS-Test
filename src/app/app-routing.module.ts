@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersListComponent } from './components/users-list/users-list.component';
-import { MailTemplateComponent } from './components/mail-template/mail-template.component';
-import { UsersCreateComponent } from './components/users-create/users-create.component';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
-import { UsersEditComponent } from './components/users-edit/users-edit.component';
-import { UsersDeleteComponent } from './components/users-delete/users-delete.component';
+import { MailTemplateComponent } from './components/email/mail-template/mail-template.component';
+import { UsersListComponent } from './components/user/users-list/users-list.component';
+import { UsersCreateComponent } from './components/user/users-create/users-create.component';
+import { UserDetailsComponent } from './components/user/user-details/user-details.component';
+import { UsersEditComponent } from './components/user/users-edit/users-edit.component';
+import { UsersDeleteComponent } from './components/user/users-delete/users-delete.component';
+
 
 const routes: Routes = [
   { path: 'sendMail', component: MailTemplateComponent },

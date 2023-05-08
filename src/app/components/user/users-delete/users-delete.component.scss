@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // max-width: 30em;
     min-width: 2em;
     margin: 2em;
     width: 80em;
@@ -38,6 +37,10 @@
         height: 100%;
         overflow: auto;
         margin: 1em;
+        h1{
+            font-family: "Nunito", sans-serif;
+            color: black;
+        }
     }
 
     &__users-content {
@@ -64,19 +67,6 @@
     }
 }
 
-.edit-button {
-    cursor: pointer;
-    font-size: 1em;
-    font-family: "Nunito", sans-serif;
-    text-transform: uppercase;
-    border-radius: 0.5em;
-    border: none;
-    outline: none;
-    background-color: yellow;
-    color: black;
-    margin: .5em;
-}
-
 .send-button {
     cursor: pointer;
     font-size: 1em;
@@ -96,10 +86,11 @@
     font-family: "Nunito", sans-serif;
     text-transform: uppercase;
     border-radius: 0.5em;
+    padding: 0.5em;
     border: none;
     outline: none;
     background-color: red;
-    color: black;
+    color: white;
     margin: .5em;
 }
 
