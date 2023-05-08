@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HelperService } from 'src/app/shared/services/helper.service';
-
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-user-template',
   templateUrl: './user-template.component.html',
@@ -31,8 +31,9 @@ export class UserTemplateComponent {
 
   defineToSend() {
     if (this.templateContext == 'create') {
+      this.form.get(['id'])?.setValue(uuidv4())
       this.helperService.createUser(this.form.value).then(() => {
-        // this.clearToSendAgain();
+      this.form.reset()
       })
     } else {
       this.helperService.editUser(this.userId, this.form.value)
