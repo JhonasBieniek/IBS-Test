@@ -2,6 +2,9 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HelperService } from 'src/app/shared/services/helper.service';
 import { v4 as uuidv4 } from 'uuid';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user.model';
+
 @Component({
   selector: 'app-user-template',
   templateUrl: './user-template.component.html',
@@ -12,13 +15,16 @@ export class UserTemplateComponent {
   @Input() templateContext: string = '';
 
   form!: FormGroup;
+  user!: User;
 
   constructor(
     private fb: FormBuilder,
     private helperService: HelperService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.form = this.fb.group({
       name: [null],
       id: [null],
@@ -27,13 +33,27 @@ export class UserTemplateComponent {
       email: [null],
       phone: [null],
     });
+    if (this.templateContext !== 'create') {
+      this.route.params.subscribe(params => {
+        this.userId = params['id'];
+      });
+      try {
+        this.user = await this.helperService.getOneUser(this.userId);
+        if (this.user.id == undefined) {
+          this.router.navigate(['/'])
+        }
+        this.form.patchValue(this.user)
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   defineToSend() {
     if (this.templateContext == 'create') {
       this.form.get(['id'])?.setValue(uuidv4())
       this.helperService.createUser(this.form.value).then(() => {
-      this.form.reset()
+        this.form.reset()
       })
     } else {
       this.helperService.editUser(this.userId, this.form.value)
