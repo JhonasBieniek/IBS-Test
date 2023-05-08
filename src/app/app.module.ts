@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserTemplateComponent } from './shared/components/user-template/user-template.component';
 import { SendEmailComponent } from './components/email/send-email/send-email.component';
 import { ErrorMessageComponent } from './components/email/error-message/error-message.component';
-import { LoadingComponent } from './components/templates/loading/loading.component';
+import { LoadingComponent } from './components/email/loading/loading.component';
 import { HeaderComponent } from './components/templates/header/header.component';
 import { UsersListComponent } from './components/user/users-list/users-list.component';
 import { MailTemplateComponent } from './components/email/mail-template/mail-template.component';
