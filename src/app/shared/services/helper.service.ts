@@ -36,7 +36,7 @@ export class HelperService {
 
   sendEmail(data: Object) {
     return new Promise((resolve, reject) => {
-      const url = `${this.url}send-email`;
+      const url = `${this.url}email/send-email/`;
       // setTimeout apenas para exibir melhor o loading
       setTimeout(() => {
         this.http.post(url, data).subscribe(() => {
