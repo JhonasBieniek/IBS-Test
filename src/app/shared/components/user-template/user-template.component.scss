@@ -30,6 +30,11 @@
             border: 1px solid #1b375c;
             font-family: "Nunito", sans-serif;
         }
+
+        .errorMessage{
+            font-size: 0.8em;
+            color: red;
+        }
     }
 
     &__users-button-container {

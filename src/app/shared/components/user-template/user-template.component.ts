@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HelperService } from 'src/app/shared/services/helper.service';
 import { v4 as uuidv4 } from 'uuid';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +15,7 @@ export class UserTemplateComponent {
   @Input() templateContext: string = '';
 
   form!: FormGroup;
+  showError: boolean = false;
   user!: User;
 
   constructor(
@@ -26,7 +27,7 @@ export class UserTemplateComponent {
 
   async ngOnInit() {
     this.form = this.fb.group({
-      name: [null],
+      name: [null, Validators.required],
       id: [null],
       profession: [null],
       pet: [null],
@@ -52,9 +53,14 @@ export class UserTemplateComponent {
   defineToSend() {
     if (this.templateContext == 'create') {
       this.form.get(['id'])?.setValue(uuidv4())
-      this.helperService.createUser(this.form.value).then(() => {
-        this.form.reset()
-      })
+      if(!this.form.invalid){
+        this.helperService.createUser(this.form.value).then(() => {
+          this.form.reset();
+          this.showError = false;
+        })
+      } else {
+        this.showError = true;
+      }
     } else {
       this.helperService.editUser(this.userId, this.form.value)
     }

@@ -5,6 +5,7 @@
           <div class="text">
             <label>Nome:</label>
             <input type="text" formControlName="name" placeholder="nome" id="name" name="name">
+            <span *ngIf="showError" class="errorMessage">Você precisa inserir pelo menos o nome!</span>
           </div>
           <div class="text">
             <label>Profissão:</label>
