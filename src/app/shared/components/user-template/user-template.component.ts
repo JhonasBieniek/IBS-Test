@@ -51,18 +51,19 @@ export class UserTemplateComponent {
   }
 
   defineToSend() {
-    if (this.templateContext == 'create') {
-      this.form.get(['id'])?.setValue(uuidv4())
-      if(!this.form.invalid){
+    if (!this.form.invalid) {
+      if (this.templateContext == 'create') {
+        this.form.get(['id'])?.setValue(uuidv4())
         this.helperService.createUser(this.form.value).then(() => {
           this.form.reset();
           this.showError = false;
         })
       } else {
-        this.showError = true;
+        this.helperService.editUser(this.userId, this.form.value)
+        this.showError = false;
       }
     } else {
-      this.helperService.editUser(this.userId, this.form.value)
+      this.showError = true;
     }
   }
 }
