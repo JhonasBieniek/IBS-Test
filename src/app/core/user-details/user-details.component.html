@@ -1,6 +1,7 @@
 <div class="content">
     <div class="back-button">
-        <button routerLink="/" class="send-button"><</button>
+        <button routerLink="/" class="send-button">
+            < </button>
     </div>
     <div class="content__users-component">
         <div class="content__users-container">
@@ -12,11 +13,19 @@
                     </div>
                     <div class="text">
                         <label>Profissão:</label>
-                        <span> {{ user.profission }} </span>
+                        <span> {{ user.profession }} </span>
                     </div>
                     <div class="text">
                         <label>Pet:</label>
                         <span> {{ user.pet }} </span>
+                    </div>
+                    <div class="text">
+                        <label>E-mail:</label>
+                        <span> {{ user.email }} </span>
+                    </div>
+                    <div class="text">
+                        <label>Telefone:</label>
+                        <span> {{ user.phone}} </span>
                     </div>
                     <div class="content__users-button-container">
                         <button routerLink="/edit/{{user.id}}" class="content__users-button edit-button">editar</button>

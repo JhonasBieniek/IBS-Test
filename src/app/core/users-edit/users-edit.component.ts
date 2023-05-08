@@ -13,8 +13,10 @@ export class UsersEditComponent {
   userId: string = '';
 
   name: string = "";
-  profission: string = "";
+  profession: string = "";
   pet: string = "";
+  email: string = "";
+  phone: string = "";
 
   constructor(private helperService: HelperService, private route: ActivatedRoute) { }
 
@@ -26,8 +28,10 @@ export class UsersEditComponent {
     try {
       this.oneUser = await this.helperService.getOneData(this.userId);
       this.name = this.oneUser[0][1].name
-      this.profission = this.oneUser[0][1].profission
+      this.profession = this.oneUser[0][1].profession
       this.pet = this.oneUser[0][1].pet
+      this.phone = this.oneUser[0][1].phone
+      this.email = this.oneUser[0][1].email
     } catch (error) {
       console.log(error);
     }
@@ -36,8 +40,10 @@ export class UsersEditComponent {
   editValues() {
     let data = {
       "name": this.name,
-      "profission": this.profission,
-      "pet": this.pet
+      "profession": this.profession,
+      "pet": this.pet,
+      "phone": this.phone,
+      "email": this.email
     }
     this.helperService.editUser(this.userId, data)
   }

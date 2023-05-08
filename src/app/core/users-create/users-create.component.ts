@@ -10,16 +10,20 @@ import { v4 as uuidv4 } from 'uuid';
 export class UsersCreateComponent {
 
   name: string = "";
-  profission: string = "";
+  profession: string = "";
   pet: string = "";
+  email: string = "";
+  phone: string = "";
 
   constructor(private helperService: HelperService) { }
 
   registerUser() {
     const data = {
       name: this.name,
-      profission: this.profission,
+      profession: this.profession,
       pet: this.pet,
+      phone: this.phone,
+      email: this.email,
       id: uuidv4(),
     }
     this.helperService.createUser(data).then(() => {
@@ -29,7 +33,9 @@ export class UsersCreateComponent {
 
   clearToSendAgain() {
     this.name = "";
-    this.profission = "";
+    this.profession = "";
     this.pet = "";
+    this.phone = "",
+    this.email = ""
   }
 }
