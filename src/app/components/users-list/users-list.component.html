@@ -1,8 +1,8 @@
 <div class="content">
     <div class="content__users-component">
         <div class="content__users-container">
-            <div *ngFor="let user of usersList[0]" class="content__users-content">
-                <div *ngIf="user.name > ''" class="">
+            <div *ngFor="let user of usersList" class="content__users-content">
+                <div *ngIf="user.name > ''">
                     <div class="text">
                         <label>Nome:</label>
                         <span> {{ user.name }} </span>

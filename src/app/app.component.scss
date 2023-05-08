@@ -1,12 +1,11 @@
 .background {
 	display: flex;
-	// justify-content: center;
 	align-items: center;
 	background: linear-gradient(to right, #1b375c, #fff);
 	height: 100vh;
 	flex-direction: column;
 }
-.content{
+.content-box{
 	display: flex;
 	height: 100vh;
 	align-items: center;

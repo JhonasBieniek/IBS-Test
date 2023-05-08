@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { HelperService } from 'src/app/shared/helper.service';
+import { HelperService } from 'src/app/shared/services/helper.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user.model';
+
+
 
 @Component({
   selector: 'app-users-delete',
@@ -11,7 +14,7 @@ import { Router } from '@angular/router';
 export class UsersDeleteComponent {
 
   userId: string = '';
-  oneUser: object | unknown = [];
+  user!: User;
 
   constructor(private helperService: HelperService, private route: ActivatedRoute, private router: Router) { }
 
@@ -20,7 +23,10 @@ export class UsersDeleteComponent {
       this.userId = params['id'];
     });
     try {
-      this.oneUser = await this.helperService.getOneData(this.userId);
+      this.user = await this.helperService.getOneUser(this.userId);
+      if(this.user.id == undefined){
+        this.router.navigate(['/'])
+      }
     } catch (error) {
       console.log(error);
     }

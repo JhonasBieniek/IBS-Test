@@ -1,0 +1,41 @@
+<div class="content">
+  <div class="back-button">
+    <button routerLink="/more/{{userId}}" class="send-button">
+      < </button> </div> <div class="content__users-component">
+        <div class="content__users-container">
+          <div>
+            <h1>Tem certeza que deseja excluir os dados desse usuario ?</h1>
+          </div>
+          <div *ngIf="user !== undefined" class="content__users-content">
+            <div *ngIf="user.name > ''" class="">
+              <div class="text">
+                <label>Nome:</label>
+                <span> {{ user.name }} </span>
+              </div>
+              <div class="text">
+                <label>Profissão:</label>
+                <span> {{ user.profession }} </span>
+              </div>
+              <div class="text">
+                <label>Pet:</label>
+                <span> {{ user.pet }} </span>
+              </div>
+              <div class="text">
+                <label>E-mail:</label>
+                <span> {{ user.email }} </span>
+              </div>
+              <div class="text">
+                <label>Telefone:</label>
+                <span> {{ user.phone }} </span>
+              </div>
+              <div class="content__users-button-container">
+                <button (click)="deleteUser()" class="content__users-button delete-button">sim quero
+                  deletar</button>
+                <button routerLink="/more/{{userId}}" class="send-button">
+                  não deletear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

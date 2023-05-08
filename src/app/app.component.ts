@@ -1,4 +1,4 @@
-import { HelperService } from './shared/helper.service';
+import { HelperService } from './shared/services/helper.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -24,8 +24,6 @@ export class AppComponent {
   }
 
   changeTemplate(){
-    //apenas troca o template pois 
-    //todos os dados de envio ja foram deletados
     this.helperService.setSend(false);
   }
 }

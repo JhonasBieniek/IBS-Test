@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HelperService } from 'src/app/shared/helper.service';
+import { User } from 'src/app/shared/models/user.model';
+import { HelperService } from 'src/app/shared/services/helper.service';
 
 @Component({
   selector: 'app-users-list',
@@ -8,7 +9,7 @@ import { HelperService } from 'src/app/shared/helper.service';
 })
 export class UsersListComponent implements OnInit {
 
-  usersList: object = [];
+  usersList: Array<User> = [];
 
   constructor(private helperService: HelperService) { }
 

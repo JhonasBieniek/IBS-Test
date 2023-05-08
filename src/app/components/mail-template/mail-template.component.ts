@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelperService } from 'src/app/shared/helper.service';
+import { HelperService } from 'src/app/shared/services/helper.service';
 
 @Component({
   selector: 'app-mail-template',
