@@ -57,7 +57,7 @@ export class HelperService {
     })
   }
 
-  getAllData(): Promise<any[]> {
+  getAllData(): Promise<object[]> {
     const url = 'http://localhost:3000/auth/';
     return this.http.get(url).toPromise()
       .then(response => {
@@ -74,7 +74,7 @@ export class HelperService {
     return new Promise((resolve, reject) => {
       const url = 'http://localhost:3000/auth/single/' + id;
       this.http.get(url).subscribe((response) => {
-        let allUser: any[] = [];
+        let allUser: object[] = [];
         allUser.push(response);
         resolve(allUser)
       }, (error) => {

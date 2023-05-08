@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class UsersDeleteComponent {
 
   userId: string = '';
-  oneUser: any = [];
+  oneUser: object | unknown = [];
 
   constructor(private helperService: HelperService, private route: ActivatedRoute, private router: Router) { }
 

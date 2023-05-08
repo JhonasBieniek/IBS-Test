@@ -8,7 +8,7 @@ import { HelperService } from 'src/app/shared/helper.service';
 })
 export class UsersListComponent implements OnInit {
 
-  usersList: any = [];
+  usersList: object = [];
 
   constructor(private helperService: HelperService) { }
 

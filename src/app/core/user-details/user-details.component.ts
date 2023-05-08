@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent {
-  oneUser: any = [];
+  oneUser: object | unknown = [];
   userId: string = '';
 
   constructor(private helperService: HelperService, private route: ActivatedRoute) { }
