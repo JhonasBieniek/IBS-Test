@@ -50,7 +50,7 @@ export class HelperService {
 
   createUser(data: Object) {
     return new Promise((resolve, reject) => {
-      const url = `${this.url}auth/register`;
+      const url = `${this.url}user/register`;
       this.http.post(url, data).subscribe(() => {
         resolve(true)
       }, (error) => {
@@ -61,7 +61,7 @@ export class HelperService {
 
   getAllData(): Promise<User[]> {
     return new Promise((resolve, reject) => {
-      const url = `${this.url}auth/`;
+      const url = `${this.url}user/`;
       return this.http.get(url).subscribe((response: any) => {
         resolve(response);
       }, (err) => {
@@ -72,7 +72,7 @@ export class HelperService {
 
   getOneUser(id: string) {
     return new Promise<User>((resolve, reject) => {
-      const url = `${this.url}auth/single/${id}`;
+      const url = `${this.url}user/single/${id}`;
       this.http.get(url).subscribe((response: any) => {
         resolve(response)
       }, (error) => {
@@ -83,7 +83,7 @@ export class HelperService {
 
   deleteUser(id: string) {
     return new Promise((resolve, reject) => {
-      const url = `${this.url}auth/delete/${id}`;
+      const url = `${this.url}user/delete/${id}`;
       this.http.delete(url).subscribe(() => {
         resolve(true)
       }, (error) => {
@@ -94,7 +94,7 @@ export class HelperService {
 
   editUser(id: string, data: object) {
     return new Promise((resolve, reject) => {
-      const url = `${this.url}auth/edit/${id}`;
+      const url = `${this.url}user/edit/${id}`;
       this.http.patch(url, data).subscribe(() => {
         resolve(true)
       }, (error) => {

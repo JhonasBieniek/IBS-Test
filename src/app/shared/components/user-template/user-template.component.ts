@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { HelperService } from 'src/app/shared/services/helper.service';
 
 @Component({
   selector: 'app-user-template',
@@ -7,18 +8,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./user-template.component.scss']
 })
 export class UserTemplateComponent {
-@Input() userId: string | null = '';
-@Input() templateContext: string = '';
+  @Input() userId: string = '';
+  @Input() templateContext: string = '';
 
-form!: FormGroup;
+  form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-  ){
+    private helperService: HelperService,
+  ) { }
 
-  }
-
-  ngOnInit(){
+  ngOnInit() {
     this.form = this.fb.group({
       name: [null],
       id: [null],
@@ -29,7 +29,13 @@ form!: FormGroup;
     });
   }
 
-  defineToSend(){
-
+  defineToSend() {
+    if (this.templateContext == 'create') {
+      this.helperService.createUser(this.form.value).then(() => {
+        // this.clearToSendAgain();
+      })
+    } else {
+      this.helperService.editUser(this.userId, this.form.value)
+    }
   }
 }
